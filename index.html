@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/tab_avatar.webp" />
@@ -8,8 +8,20 @@
     <meta name="keywords" content="React, tailwind, css, Dark Mode, Accent Colors, Frontend Developer, Portfolio, Sebastien Laifa" />
     <title>Seb Laïfa</title>
   </head>
-  <body class="dark">
+  <body >
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+  (function () {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (stored === "dark" || (!stored && prefersDark)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  })();
+</script>
   </body>
 </html>

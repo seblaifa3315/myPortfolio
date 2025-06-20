@@ -8,7 +8,7 @@ const AccentSelectorHorizontal = ({ colorTheme, setColorTheme }) => {
           name="accent"
           checked={colorTheme === "blue"}
           onChange={() => setColorTheme("blue")}
-          className="bg-primary"
+          className="accent-primary"
         />
         <span className="text-sm">Blue</span>
       </label>

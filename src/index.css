@@ -10,22 +10,42 @@ html, body {
 
 @layer base {
   :root {
+    --font-sans: "Rubik", sans-serif;
     --background: #FFFFFF;
     --textColor: #020817;
-    --AccentColor: #1E90FF;
-    --primary: #1E90FF;
     --backgroundCard: #FFFFFF;
   }
 
   .dark {
+    --font-sans: "Rubik", sans-serif;
     --background: #1c1c1d;
     --textColor: #ffffff;
-    --AccentColor: #0e3fde;
-    --primary: #0e3fde;
     --backgroundCard: #363636;
+    --primary: #00FFFF;
+  }
 
-    --font-sans: "Rubik", sans-serif;
+  .theme-blue {
+    --primary: #00FFFF;
+  }
 
+  .dark.theme-blue {
+    --primary: #00FFFF;
+  }
+
+  .theme-green {
+    --primary: #00FF00;
+  }
+
+  .dark.theme-green {
+    --primary: #00FF00;
+  }
+
+  .theme-purple {
+    --primary: #FF00FF;
+  }
+
+  .dark.theme-purple {
+    --primary: #FF00FF;
   }
 
 }

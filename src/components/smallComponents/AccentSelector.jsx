@@ -5,7 +5,7 @@ const AccentSelector = ({ colorTheme, setColorTheme }) => {
         <div className="flex flex-col items-start gap-0">
             {/* Blue Theme */}
             <label className=" inline-flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="myAccent" checked={colorTheme === "blue"} onChange={() => setColorTheme("blue")} className="bg-primary scale-75" />
+                <input type="radio" name="myAccent" checked={colorTheme === "blue"} onChange={() => setColorTheme("blue")} className="accent-primary scale-75" />
                 <span className="text-[10px]">Blue</span>
             </label>
 
