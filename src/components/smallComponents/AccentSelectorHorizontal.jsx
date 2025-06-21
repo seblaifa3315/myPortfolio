@@ -1,4 +1,9 @@
-const AccentSelectorHorizontal = ({ colorTheme, setColorTheme }) => {
+import { useTheme } from "../../context/ThemeContext";
+
+
+const AccentSelectorHorizontal = () => {
+  const { colorTheme, setColorTheme} = useTheme();
+
   return (
     <div className="flex items-center gap-4">
       {/* Blue Theme */}

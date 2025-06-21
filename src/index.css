@@ -6,30 +6,37 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 @layer base {
   :root {
     --font-sans: "Rubik", sans-serif;
     --background: #FFFFFF;
+    --background2: #FFFAFA;
     --textColor: #020817;
     --backgroundCard: #FFFFFF;
+    --primary: #002aff;
+    --myShadow: 3px 3px 6px rgba(47, 10, 212, 1);
   }
 
   .dark {
     --font-sans: "Rubik", sans-serif;
     --background: #1c1c1d;
+    --background2: #202020;
     --textColor: #ffffff;
     --backgroundCard: #363636;
-    --primary: #00FFFF;
+    --primary: #002aff;
+    --myShadow: 3px 3px 6px rgba(219, 36, 36, 1);
+
   }
 
   .theme-blue {
-    --primary: #00FFFF;
+    --primary: #002aff;
   }
 
   .dark.theme-blue {
-    --primary: #00FFFF;
+    --primary: #002aff;
   }
 
   .theme-green {
@@ -41,10 +48,34 @@ html, body {
   }
 
   .theme-purple {
-    --primary: #FF00FF;
+    --primary: #8316a8;
   }
 
   .dark.theme-purple {
+    --primary: #8316a8;
+  }
+
+    .theme-cyan {
+    --primary: #00FFFF;
+  }
+
+  .dark.theme-cyan {
+    --primary: #00FFFF;
+  }
+
+  .theme-orange {
+    --primary: #ff7300;
+  }
+
+  .dark.theme-orange {
+    --primary: #ff7300;
+  }
+
+  .theme-pink {
+    --primary: #FF00FF;
+  }
+
+  .dark.theme-pink {
     --primary: #FF00FF;
   }
 
@@ -53,10 +84,13 @@ html, body {
 
 @theme {
   --color-background: var(--background);
+  --color-background2: var(--background2);
   --color-textColor: var(--textColor);
   --color-AccentColor: var(--AccentColor);
-    --color-primary: var(--primary);
+  --color-primary: var(--primary);
   --color-backgroundCard: var(--backgroundCard);
+  --color-myShadow: var(--myShadow);
+
 
   --font-family-sans: var(--font-sans);
 }

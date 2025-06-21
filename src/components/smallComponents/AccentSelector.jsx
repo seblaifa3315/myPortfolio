@@ -1,6 +1,7 @@
+import { useTheme } from "../../context/ThemeContext";
 
-
-const AccentSelector = ({ colorTheme, setColorTheme }) => {
+const AccentSelector = () => {
+    const { colorTheme, setColorTheme} = useTheme();
  return (
         <div className="flex flex-col items-start gap-0">
             {/* Blue Theme */}

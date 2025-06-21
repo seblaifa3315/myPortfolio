@@ -1,9 +1,14 @@
 import { useData } from "../../context/DataContext";
+import SectionContainer from "../smallComponents/SectionContainer";
 
-const  Section = () => {
-  return (
-    <div> Hero Section</div>
-  )
-}
+const Hero = () => {
+    return (
+        <SectionContainer bg="bg-background" mt="-mt-20">
+            <div className="text-textColor pt-20">
+                <h1 className="">Hero Section</h1>
+            </div>
+        </SectionContainer>
+    );
+};
 
-export default  Section
+export default Hero;

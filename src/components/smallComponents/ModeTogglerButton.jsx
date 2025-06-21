@@ -1,7 +1,9 @@
 import IconMoon from "../svgs/IconMoon"
 import IconSun from "../svgs/IconSun"
+import { useTheme } from "../../context/ThemeContext";
 
-const ModeTogglerButton = ({ dark, setDark }) => {
+const ModeTogglerButton = () => {
+  const { dark, setDark} = useTheme();
 
 return (
     <label className="relative inline-flex items-center cursor-pointer w-12 h-6">
