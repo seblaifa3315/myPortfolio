@@ -1,82 +1,96 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
 html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-padding-top: 4rem; /* 64px =navbar height */
   scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 @layer base {
   :root {
-    --font-sans: "Rubik", sans-serif;
+    --font-sans: "Poppin", sans-serif;
     --background: #FFFFFF;
     --background2: #FFFAFA;
     --textColor: #020817;
     --backgroundCard: #FFFFFF;
-    --primary: #002aff;
-    --myShadow: 3px 3px 6px rgba(47, 10, 212, 1);
+    --primary: #1E90FF;
+    --primaryGradient: linear-gradient(to right, #0d43e5, #03fffb);
   }
 
   .dark {
-    --font-sans: "Rubik", sans-serif;
+    --font-sans: "Poppin", sans-serif;
     --background: #1c1c1d;
     --background2: #202020;
     --textColor: #ffffff;
     --backgroundCard: #363636;
-    --primary: #002aff;
-    --myShadow: 3px 3px 6px rgba(219, 36, 36, 1);
+    --primary: #1E90FF;
+    --primaryGradient: linear-gradient(to right, #5b07d9, #0db5ed, #06ffd1);
 
   }
 
   .theme-blue {
-    --primary: #002aff;
+    --primary: #1E90FF;
+    --primaryGradient: linear-gradient(to right, #5b07d9, #0db5ed, #06ffd1);
   }
 
   .dark.theme-blue {
-    --primary: #002aff;
+    --primary: #1E90FF;
+    --primaryGradient: linear-gradient(to right, #5b07d9, #0db5ed, #06ffd1);
   }
 
   .theme-green {
     --primary: #00FF00;
+    --primaryGradient: linear-gradient(to right, #00a072, #7aff14, #cffd27);
   }
 
   .dark.theme-green {
     --primary: #00FF00;
+    --primaryGradient: linear-gradient(to right, #00a072, #7aff14, #cffd27);
   }
 
   .theme-purple {
     --primary: #8316a8;
+    --primaryGradient: linear-gradient(to right, #2800a0, #a514ff, #fd27ef);
   }
 
   .dark.theme-purple {
     --primary: #8316a8;
+    --primaryGradient: linear-gradient(to right, #2800a0, #a514ff, #fd27ef);
   }
 
     .theme-cyan {
     --primary: #00FFFF;
+    --primaryGradient: linear-gradient(to right, #00FFFF, #14ff7a, #27b6fd);
   }
 
   .dark.theme-cyan {
     --primary: #00FFFF;
+    --primaryGradient: linear-gradient(to right, #00FFFF, #14ff7a, #27b6fd);
   }
 
   .theme-orange {
     --primary: #ff7300;
+    --primaryGradient: linear-gradient(to right, #ff7300, #fffb14, #fd2727);
   }
 
   .dark.theme-orange {
     --primary: #ff7300;
+    --primaryGradient: linear-gradient(to right, #ff7300, #fffb14, #fd2727);
   }
 
   .theme-pink {
     --primary: #FF00FF;
+    --primaryGradient: linear-gradient(to right, #FF00FF, #ff1466, #b105f6);
   }
 
   .dark.theme-pink {
     --primary: #FF00FF;
+    --primaryGradient: linear-gradient(to right, #FF00FF, #ff1466, #b105f6);
   }
 
 }
@@ -88,14 +102,97 @@ html, body {
   --color-textColor: var(--textColor);
   --color-AccentColor: var(--AccentColor);
   --color-primary: var(--primary);
-  --color-backgroundCard: var(--backgroundCard);
-  --color-myShadow: var(--myShadow);
+  --color-backgroundCard: var(--backgroundCard); 
+  --color-primaryGradient: var(--primaryGradient);
 
 
   --font-family-sans: var(--font-sans);
 }
 
+@layer utilities {
+  .bg-primaryGradient {
+    background: var(--primaryGradient);
+  }
+}
 
 
+@layer utilities {
+  .text-primaryGradient {
+    background: var(--primaryGradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+
+@layer utilities {
+  .comet-ring-double::before,
+  .comet-ring-double::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: conic-gradient(
+  transparent 0deg,
+  transparent 120deg,
+  var(--primary) 180deg,
+  transparent 240deg,
+  transparent 360deg
+);
+    z-index: 0;
+    filter: blur(5px);
+  }
+
+  .comet-ring-double::before {
+    animation: spin-a 6s linear infinite;
+  }
+
+  .comet-ring-double::after {
+    animation: spin-b 6s linear infinite;
+  }
+
+  @keyframes spin-a {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-b {
+    from {
+      transform: rotate(180deg);
+    }
+    to {
+      transform: rotate(540deg); /* 360 + 180 */
+    }
+  }
+}
+
+
+
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 0; /* square */
+}
+
+/* Firefox scrollbar (limited support) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--background);
+}
 
 

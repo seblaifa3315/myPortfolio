@@ -2,5 +2,15 @@
     "logoLeft": "Seb",
     "logoRight": ".Dev",
     "firstName": "Sebastien",
-    "lastName": "Laïfa"
+    "firstNameFrench": "Seb",
+    "lastName": "Laïfa",
+    "heroGreeting": "Hi, I'm",
+    "heroGreetingFrench": "Hey, c'est",
+    "heroStart": "And I'm a",
+    "heroStartFrench": "Je suis",
+    "typedText": ["frontend developer", "full MERN stack developer", "problem solver"],
+    "typedTextFrench": ["développeur front-end", "développeur full-stack MERN", "résolveur de problèmes"],
+    "heroIntroduction":"Hi! I'm Sebastien Laïfa, a passionate front-end developer specializing in translating design concepts into seamless and interactive web experiences using React.js and Tailwind CSS.",
+    "heroIntroductionFrench":"Salut ! Je suis Sebastien Laïfa, un développeur front-end passionné, spécialisé dans la transformation de concepts de design en expériences web fluides et interactives avec React.js et Tailwind CSS.",
+    "profileImageUrl": "/profile.png"
 }
